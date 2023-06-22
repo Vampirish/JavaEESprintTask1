@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class DBManager {
     private static final ArrayList<Task> tasks = new ArrayList<>();
-    private static long id = 6;
     static {
         tasks.add(
                 new Task(1,
@@ -55,9 +54,8 @@ public class DBManager {
         return tasks;
     }
     public static void addTask(Task task){
-        task.setId(id);
+        task.setId(tasks.size()+1);
         tasks.add(task);
-        id++;
     }
     public static void deleteTask(long id){
         tasks.remove((int)id-1);
